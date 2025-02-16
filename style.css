@@ -1,0 +1,279 @@
+/* Custom Properties */
+
+:root {
+  /* Base Font Size */
+
+  font-size: 16px;
+
+  /* Colors */
+
+  --Green-500: hsl(158, 36%, 37%);
+  --Green-700: hsl(158, 42%, 18%);
+
+  --Black: hsl(212, 21%, 14%);
+  --Grey: hsl(228, 12%, 48%);
+  --Cream: hsl(30, 38%, 92%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Typography */
+
+  --ff-primry: "Montserrat", serif;
+  --ff-accent: "Fraunces", serif;
+
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-32: 2rem;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  /* Radius */
+
+  --r-8: 0.5rem;
+  --r-10: 0.625rem;
+
+  /* Spacing */
+
+  --sp-5: 0.3125rem;
+  --sp-11: 0.725625rem;
+  --sp-12: 0.75rem;
+  --sp-15: 0.9375rem;
+  --sp-16: 1rem;
+  --sp-19: 1.1875rem;
+  --sp-20: 1.25rem;
+  --sp-23: 1.4375rem;
+  --sp-24: 1.5rem;
+  --sp-29: 1.8125rem;
+  --sp-30: 1.875rem;
+  --sp-32: 2rem;
+}
+
+/* CSS Resets */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Utility Classes */
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.clr-blk {
+  color: var(--Black);
+}
+
+.clr-grn-500 {
+  color: var(--Green-500);
+}
+
+.ff-accent {
+  font-family: var(--ff-accent);
+}
+
+.fs-12 {
+  font-size: var(--fs-12);
+}
+
+.fs-13 {
+  font-size: var(--fs-13);
+}
+
+.fs-32 {
+  font-size: var(--fs-32);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.ls-5 {
+  letter-spacing: var(--sp-5);
+}
+
+.lh-23 {
+  line-height: var(--sp-23);
+}
+
+.lh-32 {
+  line-height: var(--fs-32);
+}
+
+/* General Styling */
+
+body {
+  font-family: var(--ff-primry);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-regular);
+  background-color: var(--Cream);
+  color: var(--Grey);
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  content-visibility: auto;
+  contain-intrinsic-size: 343px 611px;
+  background-color: var(--White);
+  border-radius: var(--r-10);
+  overflow: hidden;
+  max-width: 343px;
+  max-height: 611px;
+  margin: var(--sp-29) var(--sp-16);
+}
+
+.primary-text-wrapper {
+  margin: var(--sp-24);
+  display: grid;
+}
+
+.primary-header {
+  display: grid;
+  gap: var(--sp-12);
+}
+
+.product-description {
+  margin-block: var(--sp-16) var(--sp-32);
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-19);
+  margin-bottom: 1.25rem;
+}
+
+.btn {
+  font-weight: var(--fw-bold);
+  background-color: var(--Green-500);
+  color: var(--White);
+  border: none;
+  border-radius: var(--r-8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-11);
+  padding-block: var(--sp-15);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  cursor: url("./images/Pointer.png") 0 0, pointer;
+  background-color: var(--Green-700);
+}
+
+@media (min-width: 760px) {
+  .card {
+    max-width: 600px;
+    max-height: 450px;
+  }
+
+  .card-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+  .primary-header {
+    gap: var(--sp-20);
+  }
+  .primary-text-wrapper {
+    margin: var(--sp-32);
+  }
+
+  .product-description {
+    margin-block: var(--sp-24) var(--sp-29);
+  }
+  .price-container {
+    margin-bottom: var(--sp-30);
+  }
+}
